@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <LangVersion>10</LangVersion>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.4" />
+      <PackageReference Include="Humanizer.Core" Version="2.14.1" />
+      <PackageReference Include="MayBee" Version="4.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
+      <PackageReference Include="Microsoft.Extensions.Http" Version="6.0.0" />
+      <PackageReference Include="OneOf" Version="3.0.216" />
+      <PackageReference Include="Tcp.NET.Client" Version="6.0.15" />
+      <PackageReference Include="TTools.Configuration.KeyedOptions.Net6" Version="1.1.1" />
+    </ItemGroup>
+
+</Project>
