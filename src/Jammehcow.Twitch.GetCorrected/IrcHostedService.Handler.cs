@@ -100,13 +100,13 @@ public partial class IrcHostedService
         if (privateMessage.Message.Span.StartsWith(SubstitutionPrefix))
         {
             // TODO: validate
-            var split = privateMessage.Message.ToString().Split("/");
+            var split = privateMessage.Message.ToString().Replace("\\/", "@FORSLASH@").Split("/");
 
             if (split.Length != 3)
                 return false;
 
-            var from = split[1].Trim();
-            var to = split[2].Trim();
+            var from = split[1].Trim().Replace("@FORSLASH@", "/");
+            var to = split[2].Trim().Replace("@FORSLASH@", "/");
 
             var hist = _chatHistoryService.GetHistorySnapshotForChannel(privateMessage.Channel.ToString());
             var possibleMatch = hist.FirstAsMaybe(line => line.message.Contains(from));
