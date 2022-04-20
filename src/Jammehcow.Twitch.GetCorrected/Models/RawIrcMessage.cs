@@ -36,6 +36,8 @@ public readonly struct RawIrcMessage : IIrcMessage
         Tags = tags;
         Prefix = prefix;
         Command = command;
-        Parameters = parameters;
+
+        // TODO: move this out of here to parser, i'm just too lazy to refactor because it's 6PM
+        Parameters = parameters.Span.EndsWith("\u000E\u0000") ? parameters[..^1] : parameters;
     }
 }
